@@ -41,7 +41,7 @@ python -m pip install -r requirements.txt
 python -m uvicorn main:a --reload --host 127.0.0.1 --port 8000
 ```
 
-백엔드 주소는 <http://127.0.0.1:8000>이며, API 문서는 <http://127.0.0.1:8000/docs>에서 확인할 수 있습니다. 서버 프로세스의 작업 디렉터리가 `backend`여야 JSON 데이터 파일을 찾을 수 있습니다.
+백엔드 주소는 <https://menus-project-91bo.onrender.com>이며, API 문서는 <https://menus-project-91bo.onrender.com/docs>에서 확인할 수 있습니다. 서버 프로세스의 작업 디렉터리가 `backend`여야 JSON 데이터 파일을 찾을 수 있습니다.
 
 ### 2. 프런트엔드 실행
 
@@ -52,7 +52,7 @@ cd frontend
 python -m http.server 5500
 ```
 
-브라우저에서 <http://127.0.0.1:5500>을 엽니다. 프런트엔드는 `http://127.0.0.1:8000`의 API를 호출하도록 설정되어 있습니다. 각 서버를 종료하려면 해당 터미널에서 `Ctrl+C`를 누릅니다.
+브라우저에서 <http://127.0.0.1:5500>을 엽니다. 프런트엔드는 `https://menus-project-91bo.onrender.com`의 API를 호출하도록 설정되어 있습니다. 각 서버를 종료하려면 해당 터미널에서 `Ctrl+C`를 누릅니다.
 
 ## API
 

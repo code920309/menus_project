@@ -72,7 +72,7 @@ def add_menus(menuObject:Menu):   ## menuObject는 변수명 , Menu 타입 : 위
         "message":"ok"
     }
 
-# 클라이언트가 보낸 방식 http://127.0.0.1:8000/menus/${menuId}   #클라이언트가 보낸  data가 ${menuId}
+# 클라이언트가 보낸 방식 https://menus-project-91bo.onrender.com/menus/${menuId}   #클라이언트가 보낸  data가 ${menuId}
 # 클라이어트가 /요청/데이터  이런 형식으로 보내서 다음과 같이 작성해야 한다.
 @a.delete("/menus/{menu_id}")
 def delete_menu(menu_id : int):
