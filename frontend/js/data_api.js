@@ -102,7 +102,7 @@ async function deleteMenu(menuId) {
 // 수정할 데이터를 가져오는 기능 추가, id값을 서버에게 보내서 서버가 한 개만 가져다 주는 코드
 async function getMenuOne(id) {
   try {
-    const url = `https://menus-project-91bo.onrender.com/menus/${id}`  
+    const url = `https://menus-project-91bo.onrender.com/menus/${id}`
     const re = await fetch(
       url,
       {
@@ -124,7 +124,7 @@ async function updateMenu(menuObject) {
     const re = await fetch(
       url,
       {
-        method: "PUT",  
+        method: "PUT",
         headers: { "Content-Type": "application/json" },  //html  헤더의 문서의 종류가   json 이다
         body: JSON.stringify(menuObject)   //html의 body영역에 넣은 값
       }
@@ -142,17 +142,17 @@ async function updateMenu(menuObject) {
 // 추천서비스
 async function recommendMenu(id) {
   console.log('aaaa')
-  try{
+  try {
     const url = `https://menus-project-91bo.onrender.com/menus/recommend/${id}`
     const re = await fetch(
       url,
       {
-        method:"POST"
+        method: "POST"
       }
     )
-    if(!re.ok) throw new Error("추천을 하지 못함")
+    if (!re.ok) throw new Error("추천을 하지 못함")
     return re.json()
-  } catch (error){
+  } catch (error) {
     console.log(error)
   }
 }
