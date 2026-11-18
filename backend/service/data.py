@@ -39,7 +39,7 @@ def search_Word(word):
     return result 
 
 #데이터 추가하는 함수
-def add_menu(menu):   ## 객체를 받은 것.
+def add_menu(menu, attachment=None):   ## 메뉴 객체와 선택적인 첨부파일 정보를 받습니다.
    
     menu = menu.model_dump()    ## 객체를 딕셔너리 변경
 
@@ -50,11 +50,20 @@ def add_menu(menu):   ## 객체를 받은 것.
         "id": next_id,
         "name":menu["name"],
         "calories":menu["calories"],
-        "description":menu["description"]
+        "description":menu["description"],
+        "recommendation":0
     }
+    # 첨부파일이 있는 경우에만 메뉴 JSON에 파일 정보를 추가합니다.
+    if attachment is not None:
+        new_menu["attachment"] = attachment
     ##print('22')
     menus.append(new_menu)
-    save_menus()  #menus의 내용이 변경되었으니 json파일도 변경되어야 함
+    try:
+        save_menus()  #menus의 내용이 변경되었으니 json파일도 변경되어야 함
+    except Exception:
+        # 저장이 실패하면 메모리에 추가한 메뉴를 제거하고 오류를 호출한 쪽에 전달합니다.
+        menus.remove(new_menu)
+        raise
     ##print('33')
     next_id += 1
 

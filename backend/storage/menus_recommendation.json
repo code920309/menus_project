@@ -1,66 +1,31 @@
 [
     {
-        "id": 5,
-        "name": "마파두부",
-        "calories": 400,
-        "description": "두부와 다진 고기를 매콤한 소스로 볶은 중국 요리",
-        "recommendation": 92
-    },
-    {
-        "id": 6,
-        "name": "깐풍기",
-        "calories": 750,
-        "description": "튀긴 닭고기를 매콤달콤한 소스에 볶은 요리",
-        "recommendation": 313
-    },
-    {
-        "id": 7,
-        "name": "양장피",
-        "calories": 500,
-        "description": "해산물과 채소를 겨자소스에 곁들인 중국 요리",
-        "recommendation": 195
-    },
-    {
-        "id": 8,
-        "name": "유산슬",
-        "calories": 450,
-        "description": "해산물과 채소를 걸쭉한 소스로 볶은 요리",
-        "recommendation": 64
-    },
-    {
         "id": 9,
         "name": "군만두",
-        "calories": 350,
+        "calories": 3500,
         "description": "속을 채운 만두를 바삭하게 구운 음식",
-        "recommendation": 277
+        "recommendation": 279
     },
     {
         "id": 10,
         "name": "마라탕",
         "calories": 700,
         "description": "다양한 재료를 얼얼하고 매콤한 국물에 끓인 요리",
-        "recommendation": 489
+        "recommendation": 491
     },
     {
         "id": 11,
         "name": "김치찌개",
         "calories": 450,
         "description": "김치와 돼지고기를 넣고 끓인 찌개",
-        "recommendation": 356
+        "recommendation": 357
     },
     {
         "id": 12,
         "name": "된장찌개",
         "calories": 350,
         "description": "된장과 두부 채소를 넣어 끓인 찌개",
-        "recommendation": 216
-    },
-    {
-        "id": 13,
-        "name": "순두부찌개",
-        "calories": 400,
-        "description": "부드러운 순두부를 매콤하게 끓인 찌개",
-        "recommendation": 328
+        "recommendation": 217
     },
     {
         "id": 14,
@@ -382,21 +347,21 @@
         "name": "햄버거",
         "calories": 550,
         "description": "빵 사이에 패티와 채소를 넣은 음식",
-        "recommendation": 491
+        "recommendation": 492
     },
     {
         "id": 60,
         "name": "치즈버거",
         "calories": 650,
         "description": "햄버거에 치즈를 추가한 음식",
-        "recommendation": 368
+        "recommendation": 369
     },
     {
         "id": 61,
         "name": "치킨",
         "calories": 900,
         "description": "닭고기를 바삭하게 튀기거나 구워 만든 음식",
-        "recommendation": 500
+        "recommendation": 501
     },
     {
         "id": 62,
@@ -415,9 +380,9 @@
     {
         "id": 64,
         "name": "닭갈비",
-        "calories": 650,
+        "calories": 6500,
         "description": "닭고기와 채소를 매콤한 양념에 볶은 음식",
-        "recommendation": 374
+        "recommendation": 375
     },
     {
         "id": 65,
@@ -669,13 +634,54 @@
         "name": "바닐라쉐이크",
         "calories": 400,
         "description": "바닐라 아이스크림과 우유를 섞어 만든 음료",
-        "recommendation": 251
+        "recommendation": 252
     },
     {
         "id": 102,
         "name": "11",
+        "calories": 1111,
+        "description": "11",
+        "recommendation": 12
+    },
+    {
+        "id": 104,
+        "name": "22",
+        "calories": 22,
+        "description": "22"
+    },
+    {
+        "id": 105,
+        "name": "1122",
+        "calories": 22,
+        "description": "222"
+    },
+    {
+        "id": 106,
+        "name": "77",
+        "calories": 77,
+        "description": "77",
+        "recommendation": 7
+    },
+    {
+        "id": 107,
+        "name": "11",
         "calories": 11,
         "description": "11",
-        "recommendation": 1
+        "recommendation": 0,
+        "attachment": {
+            "filename": "KakaoTalk_20250721_195748957_01.jpg",
+            "stored_filename": "6df69d67eaa1485fafb441a474573c50"
+        }
+    },
+    {
+        "id": 108,
+        "name": "22",
+        "calories": 22,
+        "description": "22",
+        "recommendation": 0,
+        "attachment": {
+            "filename": "KakaoTalk_20250721_195748957_03.jpg",
+            "stored_filename": "82441710cd1c4234b2dcae3789b936d7"
+        }
     }
 ]

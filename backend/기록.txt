@@ -8,4 +8,8 @@
 
 # FastAPI 실행
 # uvicorn main:a --host 0.0.0.0 --port 8000 --reload
-#                     
+#
+
+# powershell에서 실행
+# $env:JWT_SECRET = & .\.venv\Scripts\python.exe -c "import secrets; print(secrets.token_urlsafe(48))"
+# .\.venv\Scripts\python.exe -m uvicorn main_file_eazy_jwt:a --reload

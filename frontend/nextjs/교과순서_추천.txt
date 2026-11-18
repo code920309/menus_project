@@ -1,0 +1,105 @@
+React 교과 순서 (frontend/nextjs/app 분석)
+==========================================
+
+이 순서는 메뉴 관리 앱에서 실제로 사용하는 개념을 기초부터 통합까지 익히도록 구성했습니다.
+경로는 frontend/nextjs 기준입니다.
+
+1. JSX와 함수형 컴포넌트
+   - 화면을 JSX로 표현하고 컴포넌트를 함수로 정의하는 방법
+   - 컴포넌트별 책임 나누기
+   - 예시: app/page.js, components/Header.js, components/MenuCard.js
+
+2. 컴포넌트 조합과 children
+   - 여러 컴포넌트를 조합해 페이지를 구성하기
+   - 부모가 전달한 children을 레이아웃 안에 표시하기
+   - 예시: app/layout.js의 Header, ChatSidebar, {children}
+
+3. Props와 데이터 전달
+   - 부모에서 자식으로 데이터를 전달하고 JSX 안에 출력하기
+   - 컴포넌트가 받을 props를 구조 분해해 사용하기
+   - 예시: MenuCard의 menu, MenuTable의 menus와 onRefresh
+
+4. 배열 렌더링과 key
+   - map으로 데이터 배열을 화면 요소로 변환하기
+   - 각 항목에 안정적인 key를 지정하고 목록이 비었을 때를 생각하기
+   - 예시: app/page.js의 추천 메뉴, components/MenuTable.js의 메뉴 행,
+     components/ChatSidebar.js의 대화 메시지
+
+5. 이벤트 처리와 이벤트 객체
+   - onClick, onChange, onSubmit, onKeyDown 핸들러 작성
+   - 폼 기본 동작을 막는 preventDefault와 조건에 따른 이벤트 처리
+   - 예시: 전체 메뉴 검색, 추천/삭제 버튼, 채팅 Enter 전송
+
+6. useState와 화면 상태
+   - state 선언, setter를 통한 갱신, state 변경에 따른 재렌더링
+   - 문자열·배열·객체 상태를 다루고 이전 상태에 기반해 갱신하기
+   - 예시: menus, keyword, loading, messages 상태
+
+7. 제어 컴포넌트와 폼 입력
+   - value와 onChange를 연결해 입력값을 React state로 관리하기
+   - 제출 시 입력 데이터를 부모에 전달하고 검증·초기값을 다루기
+   - 예시: 전체 메뉴 검색 input, ChatSidebar의 textarea,
+     신규/수정 페이지의 MenuForm 연결
+   - 주의: 현재 components/MenuForm.js 내용은 메뉴 목록 페이지와 동일합니다.
+     신규/수정 페이지에서 가져오는 폼 컴포넌트 구현은 별도로 작성해야 합니다.
+
+8. 조건부 렌더링
+   - 로딩 여부, 버튼 활성화 여부, 값의 존재 여부에 따라 UI 바꾸기
+   - 논리 AND, 삼항 연산자, null 병합 연산자 활용
+   - 예시: 홈과 수정 페이지의 로딩 표시, 채팅 응답 대기 표시,
+     추천 수의 기본값, 전송 버튼 disabled
+
+9. Effect와 컴포넌트 생명주기
+   - useEffect로 첫 렌더 후 데이터 조회하기
+   - 의존성 배열의 의미와 id 변경 시 다시 실행되는 효과 이해하기
+   - 비동기 요청의 취소/경합, 의존성 누락 등 주의점 살펴보기
+   - 예시: app/page.js, app/menus/page.js, app/menus/[id]/edit/page.js
+
+10. 비동기 작업과 API 서비스 분리
+    - async/await, 성공·실패·완료 처리와 사용자 피드백
+    - fetch 결과 및 HTTP 오류 처리, 화면 상태와 요청 상태 연결하기
+    - UI 컴포넌트와 요청 함수를 분리하는 이유 이해하기
+    - 예시: services/api.js와 각 페이지의 API 호출
+
+11. 콜백 Props와 상호작용 흐름
+    - 자식에서 발생한 동작을 콜백 Props로 부모에 알리기
+    - 저장 후 이동, 변경 후 목록 새로고침처럼 흐름을 연결하기
+    - 예시: MenuTable의 onRefresh, 신규/수정 페이지의 handleSave와
+      MenuForm의 onSave 계약
+
+12. CRUD 기능 통합
+    - 목록·검색·등록·수정·삭제·추천을 하나의 사용자 흐름으로 연결하기
+    - 데이터 조회, 변경, 재조회와 오류/로딩 상태를 점검하기
+    - 예시: app/menus/page.js, app/menus/new/page.js,
+      app/menus/[id]/edit/page.js, components/MenuTable.js
+
+13. Next.js 라우팅과 React 상태의 연결
+    - Link로 이동하고 useRouter로 코드에서 이동하기
+    - 동적 경로의 파라미터를 useParams로 읽기
+    - 예시: /menus, /menus/new, /menus/[id]/edit
+
+14. Server Component와 Client Component 경계
+    - 기본 Server Component와 상호작용이 필요한 Client Component 구분
+    - useState, useEffect, 브라우저 이벤트가 필요한 위치와
+      "use client" 경계 이해하기
+    - 예시: app/layout.js는 서버 컴포넌트, 상태/이벤트를 쓰는 페이지와
+      ChatSidebar, MenuTable은 클라이언트 컴포넌트
+
+15. 종합 실습: 채팅 UI
+    - 입력·메시지 목록·비동기 응답·로딩 상태를 한 기능으로 통합하기
+    - 기능을 작은 컴포넌트와 상태로 나누고 동작을 검증하기
+    - 예시: components/ChatSidebar.js와 services/api.js의 sendChat
+
+권장 진행 방식
+--------------
+각 차시에서 먼저 개념을 작은 예제로 연습하고, 이어서 위의 실제 파일을 함께 읽습니다.
+마지막에는 메뉴 등록/수정 폼을 완성하고 CRUD와 채팅을 직접 수정하는 실습으로
+Props, state, 이벤트, 비동기 데이터 흐름을 복습합니다.
+
+
+
+0. [예제] 컴포넌트 만들기 랜더링 하기.. 샘플필요
+1. 레이아웃을 잡자.
+2. [예제] 칠드런 방식.. 샘플필요
+3. 레이아웃에 nextjs의 칠드런 방식을 사용하겠다.
+4. 첫화면을 출력해 본다. app/page.js 이때 MenuCard는 분리하지 않는다.
